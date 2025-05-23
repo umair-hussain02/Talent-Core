@@ -61,7 +61,7 @@ export default function CareerSitePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white ">
       {/* Hero Section */}
       <HeroSection publicJobsCount={publicJobs.length} />
 

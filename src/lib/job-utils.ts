@@ -29,7 +29,7 @@ export function filterJobs(
   return jobs.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      job.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job?.company?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.description?.toLowerCase().includes(searchQuery.toLowerCase())
 
     const matchesLocation = locationFilter === "all" || job.location === locationFilter
