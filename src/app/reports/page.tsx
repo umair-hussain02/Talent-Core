@@ -1,10 +1,9 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { mockReports, reportCategories, reportTemplates, reportStatistics } from "@/data/mockReports"
+import { mockReports, reportCategories, reportStatistics } from "@/data/mockReports"
 import type { Report } from "@/types/report"
 import { ReportCard } from "@/components/reports/report-card"
-import { ReportBuilder } from "@/components/reports/report-builder"
 import { ReportViewer } from "@/components/reports/report-viewer"
 import { ChartComponent, sampleCharts } from "@/components/reports/chart-component"
 import { Button } from "@/components/ui/button"
@@ -83,9 +82,7 @@ export default function ReportsPage() {
   }
 
   
-  const handleCreateReport = () => { // erorr in this line 
-    console.log("Creating new report:", )
-  }
+ 
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -172,7 +169,6 @@ export default function ReportsPage() {
                 <h1 className="text-2xl font-bold text-gray-900">Reports & Analytics</h1>
                 <p className="text-gray-600">Create, manage, and analyze your business reports</p>
               </div>
-              <ReportBuilder templates={reportTemplates} onCreateReport={handleCreateReport} />
             </div>
 
             {/* Filters and Search */}
@@ -286,7 +282,6 @@ export default function ReportsPage() {
               <BarChart3 className="h-12 w-12 text-gray-400 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">No reports found</h3>
               <p className="text-gray-600 mb-4">Try adjusting your search criteria or create a new report.</p>
-              <ReportBuilder templates={reportTemplates} onCreateReport={handleCreateReport} />
             </div>
           )}
         </div>

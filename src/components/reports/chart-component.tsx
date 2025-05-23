@@ -11,7 +11,7 @@ interface ChartData {
   value?: string | number
   change?: string
   changeType?: "positive" | "negative" | "neutral"
-  data?: any[]
+  data?: []
   color?: string
 }
 
