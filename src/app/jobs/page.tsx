@@ -51,7 +51,7 @@ export default function JobsPage() {
   }, [])
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 ">
       <JobHeader onCreateJob={handleCreateJob} />
 
       {/* Stats Cards */}

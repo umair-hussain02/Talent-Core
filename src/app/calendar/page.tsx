@@ -72,7 +72,7 @@ export default function InterviewsPage() {
   const hasEvents = mockCalendarEvents.length > 0
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-12 w-[1080px]">
       <div className="flex justify-between items-center mb-6 mt-8">
         <h1 className="text-2xl font-bold text-gray-900">Interviews & Calendar</h1>
       </div>

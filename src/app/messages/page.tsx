@@ -34,7 +34,7 @@ export default function MessagesPage() {
   }, [])
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-12">
       <h1 className="text-2xl font-bold text-gray-900 mt-8 mb-6">Messages</h1>
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 h-[calc(100vh-200px)] flex">

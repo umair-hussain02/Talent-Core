@@ -91,7 +91,7 @@ export default function EmployeesPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-14">
       <div className="flex justify-between items-center mb-6 mt-8">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Employees</h1>

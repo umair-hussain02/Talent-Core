@@ -58,8 +58,8 @@ export interface ReportParameter {
   type: 'text' | 'number' | 'date' | 'select' | 'multiselect' | 'boolean'
   label: string
   required: boolean
-  defaultValue?: Record<string, string | number | boolean | null>
-  options?: { label: string; value: Record<string, string | number | boolean | null> }[]
+  defaultValue?: string
+  options?: { label: string; value: string }[]
   validation?: {
     min?: number
     max?: number

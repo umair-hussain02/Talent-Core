@@ -9,7 +9,7 @@ interface JobHeaderProps {
 
 export function JobHeader({ onCreateJob }: JobHeaderProps) {
   return (
-    <div className="flex justify-between items-center mb-6 mt-8">
+    <div className="flex justify-between items-center mb-6 mt-20">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Jobs</h1>
         <p className="text-gray-600 mt-1">Manage and track your job postings</p>

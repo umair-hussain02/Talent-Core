@@ -73,7 +73,7 @@ function FolderItem({
   onShareFolder
 }: FolderItemProps) {
   return (
-    <div className="group">
+    <div className="group ">
       <div
         className={`flex items-center space-x-2 px-2 py-1.5 rounded-md cursor-pointer transition-colors ${
           isSelected 

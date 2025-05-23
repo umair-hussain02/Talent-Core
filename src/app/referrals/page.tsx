@@ -52,8 +52,8 @@ export default function ReferralsPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <ReferralHeader />
+    <div className="container mx-auto p-4 ">
+      <ReferralHeader/>
 
       {/* Stats Cards */}
       <ReferralStats stats={mockReferralStats} />
