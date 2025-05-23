@@ -72,6 +72,7 @@ export function JobListingsSection() {
             onClick={() => handleJobClick(job)}
           >
             <JobCard
+              id = {job.id}
               title={job.title}
               postedDays={job.postedDays}
               location={job.location}
