@@ -21,7 +21,7 @@ export function JobListItem({ job, onClick }: JobListItemProps) {
           <div className="flex items-center gap-4 flex-1">
             <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
               <span className="text-lg font-bold text-purple-600" aria-hidden="true">
-                {job.company.charAt(0)}
+                {job?.company?.charAt(0) || "Company"}
               </span>
             </div>
 
