@@ -18,7 +18,7 @@ export default function ReferralsPage() {
   const [jobFilter, setJobFilter] = useState("all")
   const [referrerFilter, setReferrerFilter] = useState("all")
   const [viewMode, setViewMode] = useState<"grid" | "list" | "kanban">("grid")
-  const [selectedReferral, setSelectedReferral] = useState<Referral | null>(null)
+  const [, setSelectedReferral] = useState<Referral | null>(null)
 
   // Filter and search referrals
   const filteredReferrals = useMemo(() => {

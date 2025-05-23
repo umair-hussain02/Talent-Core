@@ -11,6 +11,7 @@ export interface Job {
   salary?: string;
   jobType?: string;
   description?: string;
+  className?: string;
   requirements?: string[];
   responsibilities?: string[];
   skills?: string[];
