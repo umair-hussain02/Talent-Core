@@ -19,7 +19,7 @@ export function formatSalary(salary?: string): string {
  * @returns Filtered array of jobs
  */
 export function filterJobs(
-  jobs: any[],
+  jobs: Job[],
   searchQuery: string,
   locationFilter: string,
   experienceFilter: string,
@@ -50,6 +50,9 @@ export function filterJobs(
  * @param property Property to extract unique values for
  * @returns Array of unique values
  */
-export function getUniqueValues(jobs: any[], property: string): string[] {
-  return [...new Set(jobs.map((job) => job[property]).filter(Boolean))]
+import { Job } from '../types/job';
+
+export function getUniqueValues<K extends keyof Job>(jobs: Job[], property: K): string[] {
+  return [...new Set(jobs.map((job) => String(job[property])).filter(Boolean))]
 }
+

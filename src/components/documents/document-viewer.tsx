@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Document } from '@/types/document'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -78,11 +78,11 @@ export function DocumentViewer({
   onDownload,
   onToggleFavorite
 }: DocumentViewerProps) {
-  const [selectedVersion, setSelectedVersion] = useState<string>('')
+  // const [selectedVersion, setSelectedVersion] = useState<string>('')
 
   if (!document) return null
 
-  const currentVersion = document.versions.find(v => v.isCurrent) || document.versions[0]
+  // const currentVersion = document.versions.find(v => v.isCurrent) || document.versions[0]
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

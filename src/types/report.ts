@@ -58,8 +58,8 @@ export interface ReportParameter {
   type: 'text' | 'number' | 'date' | 'select' | 'multiselect' | 'boolean'
   label: string
   required: boolean
-  defaultValue?: any
-  options?: { label: string; value: any }[]
+  defaultValue?: Record<string, string | number | boolean | null>
+  options?: { label: string; value: Record<string, string | number | boolean | null> }[]
   validation?: {
     min?: number
     max?: number
@@ -71,8 +71,8 @@ export interface ChartConfig {
   id: string
   type: 'bar' | 'line' | 'pie' | 'doughnut' | 'area' | 'scatter' | 'table'
   title: string
-  data: any[]
-  options: any
+  data: Record<string, string | number | boolean | null>[]
+  options: Record<string, string | number | boolean | null>
   position: { x: number; y: number; width: number; height: number }
 }
 
@@ -125,6 +125,7 @@ export interface ReportActivity {
   timestamp: string
   details?: string
 }
+
 
 export type ReportType = 'standard' | 'dashboard' | 'scheduled' | 'ad-hoc' | 'template'
 export type ReportStatus = 'draft' | 'published' | 'archived' | 'scheduled'

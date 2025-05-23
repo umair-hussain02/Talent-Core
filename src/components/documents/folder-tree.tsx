@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { JSX, useState } from 'react'
 import { DocumentFolder } from '@/types/document'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
 } from '@/components/ui/collapsible'
 import {
   DropdownMenu,

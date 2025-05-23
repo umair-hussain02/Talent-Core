@@ -16,7 +16,6 @@ interface CalendarHeaderProps {
 }
 
 export function CalendarHeader({
-  currentDate,
   view,
   onViewChange,
   onPrevious,

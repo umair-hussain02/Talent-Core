@@ -12,7 +12,7 @@ interface JobActionsProps {
   onDelete?: () => void
 }
 
-export function JobActions({ job, onView, onEdit, onDelete }: JobActionsProps) {
+export function JobActions({ onView, onEdit, onDelete }: JobActionsProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

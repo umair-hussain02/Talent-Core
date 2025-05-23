@@ -22,7 +22,7 @@ import { Plus, BarChart3, Play, Save, X } from "lucide-react"
 
 interface ReportBuilderProps {
   templates: ReportTemplate[]
-  onCreateReport?: (reportData: any) => void
+  onCreateReport?: (reportData: Record<string, any>) => void // error in this line
 }
 
 export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps) {
@@ -30,23 +30,23 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
   const [selectedTemplate, setSelectedTemplate] = useState<ReportTemplate | null>(null)
   const [reportName, setReportName] = useState("")
   const [reportDescription, setReportDescription] = useState("")
-  const [parameters, setParameters] = useState<Record<string, any>>({})
+  const [parameters, setParameters] = useState<Record<string, string | number | boolean | null>>({})
 
   const handleTemplateSelect = (template: ReportTemplate) => {
     setSelectedTemplate(template)
     setReportName(`${template.name} - ${new Date().toLocaleDateString()}`)
     setReportDescription(template.description)
-    // Initialize parameters with default values
-    const defaultParams: Record<string, any> = {}
+
+    const defaultParams: Record<string, string | number | boolean | null> = {}
     template.parameters.forEach((param) => {
       if (param.defaultValue !== undefined) {
-        defaultParams[param.name] = param.defaultValue
+        defaultParams[param.name] = param.defaultValue // and in this line
       }
     })
     setParameters(defaultParams)
   }
 
-  const handleParameterChange = (paramName: string, value: any) => {
+  const handleParameterChange = (paramName: string, value: string | number | boolean | null) => {
     setParameters((prev) => ({
       ...prev,
       [paramName]: value,
@@ -81,7 +81,7 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
       case "text":
         return (
           <Input
-            value={parameters[param.name] || ""}
+            value={(parameters[param.name] as string) || ""}
             onChange={(e) => handleParameterChange(param.name, e.target.value)}
             placeholder={`Enter ${param.label.toLowerCase()}`}
           />
@@ -90,7 +90,7 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
         return (
           <Input
             type="number"
-            value={parameters[param.name] || ""}
+            value={parameters[param.name]?.toString() || ""}
             onChange={(e) => handleParameterChange(param.name, Number(e.target.value))}
             placeholder={`Enter ${param.label.toLowerCase()}`}
           />
@@ -98,7 +98,7 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
       case "select":
         return (
           <Select
-            value={parameters[param.name] || ""}
+            value={(parameters[param.name] as string | number | boolean | null)?.toString() || ""}
             onValueChange={(value) => handleParameterChange(param.name, value)}
           >
             <SelectTrigger>
@@ -106,10 +106,25 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
             </SelectTrigger>
             <SelectContent>
               {param.options?.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
+                <SelectItem key={option.value?.toString()} value={option.value?.toString()}>
                   {option.label}
                 </SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+        )
+      case "boolean":
+        return (
+          <Select
+            value={parameters[param.name]?.toString() || ""}
+            onValueChange={(value) => handleParameterChange(param.name, value === "true")}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder={`Select ${param.label.toLowerCase()}`} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="true">True</SelectItem>
+              <SelectItem value="false">False</SelectItem>
             </SelectContent>
           </Select>
         )
@@ -117,14 +132,14 @@ export function ReportBuilder({ templates, onCreateReport }: ReportBuilderProps)
         return (
           <Input
             type="date"
-            value={parameters[param.name] || ""}
+            value={(parameters[param.name] as string) || ""}
             onChange={(e) => handleParameterChange(param.name, e.target.value)}
           />
         )
       default:
         return (
           <Input
-            value={parameters[param.name] || ""}
+            value={(parameters[param.name] as string) || ""}
             onChange={(e) => handleParameterChange(param.name, e.target.value)}
             placeholder={`Enter ${param.label.toLowerCase()}`}
           />

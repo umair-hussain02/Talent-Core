@@ -38,7 +38,7 @@ export function HeroSection({ publicJobsCount }: HeroSectionProps) {
         </div>
         <h2 className="text-5xl font-bold mb-6">Join Our Mission</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-          We're building the future of talent management. Join our team of passionate individuals who are transforming
+          Were building the future of talent management. Join our team of passionate individuals who are transforming
           how companies find, hire, and develop talent.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -53,7 +53,7 @@ export function JobDetailsDialog({ job, isOpen, onClose, onApplyClick }: JobDeta
 
           {job.responsibilities && job.responsibilities.length > 0 && (
             <div>
-              <h3 className="text-lg font-semibold mb-3">What You'll Do</h3>
+              <h3 className="text-lg font-semibold mb-3">What Youll Do</h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
                 {job.responsibilities.map((resp, index) => (
                   <li key={index}>{resp}</li>
@@ -64,7 +64,7 @@ export function JobDetailsDialog({ job, isOpen, onClose, onApplyClick }: JobDeta
 
           {job.requirements && job.requirements.length > 0 && (
             <div>
-              <h3 className="text-lg font-semibold mb-3">What We're Looking For</h3>
+              <h3 className="text-lg font-semibold mb-3">What Were Looking For</h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
                 {job.requirements.map((req, index) => (
                   <li key={index}>{req}</li>

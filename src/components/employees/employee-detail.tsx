@@ -403,7 +403,7 @@ export function EmployeeDetail({ employee, allEmployees, onEmployeeClick }: Empl
               <CardContent className="p-6 text-center">
                 <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 mb-2">No Team Information</h3>
-                <p className="text-gray-600">This employee doesn't have any manager or direct reports assigned.</p>
+                <p className="text-gray-600">This employee doesnt have any manager or direct reports assigned.</p>
               </CardContent>
             </Card>
           )}
@@ -438,7 +438,7 @@ export function EmployeeDetail({ employee, allEmployees, onEmployeeClick }: Empl
               <CardContent className="p-6 text-center">
                 <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 mb-2">No Projects</h3>
-                <p className="text-gray-600">This employee doesn't have any projects assigned.</p>
+                <p className="text-gray-600">This employee doesnt have any projects assigned.</p>
               </CardContent>
             </Card>
           )}
