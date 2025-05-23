@@ -82,9 +82,9 @@ export default function ReportsPage() {
     // Implement favorite toggle logic
   }
 
-  const handleCreateReport = (reportData: any) => {
-    console.log("Creating new report:", reportData)
-    // Implement report creation logic
+  
+  const handleCreateReport = () => { // erorr in this line 
+    console.log("Creating new report:", )
   }
 
   return (
