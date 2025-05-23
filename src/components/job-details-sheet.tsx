@@ -43,7 +43,7 @@ export function JobDetailsSheet({ isOpen, onClose, job }: JobDetailsProps) {
           <div className="flex items-start gap-4 mb-6">
             <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
               <span className="text-lg font-bold text-purple-600">
-                {job?.company?.charAt(0)}
+                {job?.company?.charAt(0) || "Compnany"}
               </span>
             </div>
             <div>
